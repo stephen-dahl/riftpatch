@@ -12,7 +12,7 @@ the same value.
 That's where RiftPatch comes in. RiftPatch scans your mods to see what they changed.
 It will create a new mod with the changes from both mods and add it to the end of your mod list.
 
-NOTE: RiftPatch can not merge conflicts. Some changes require manual intervention to fix. Most changes should work
+NOTE: RiftPatch can not merge all conflicts. Some changes require manual intervention to fix. Most changes should work
 though as long as the folder and extention are listed.
 
 * Supported Folders: [src/lib/parsableFolders.ts](src/lib/parsableFolders.ts)
