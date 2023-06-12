@@ -13,7 +13,7 @@ That's where RiftPatch comes in. RiftPatch scans your mods to see what they chan
 It will create a new mod with the changes from both mods and add it to the end of your mod list.
 
 NOTE: RiftPatch can not merge all conflicts. Some changes require manual intervention to fix. Most changes should work
-though as long as the folder and extention are listed.
+though as long as the folder and extension are listed.
 
 * Supported Folders: [src/lib/parsableFolders.ts](src/lib/parsableFolders.ts)
 * Supported files: [src/lib/parsableFileTypes.ts](src/lib/parsableFileTypes.ts)
