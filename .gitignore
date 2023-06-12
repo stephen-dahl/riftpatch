@@ -1,0 +1,6 @@
+/.idea
+/node_modules
+*.riftPatch
+test.txt
+/dist
+/body.md
