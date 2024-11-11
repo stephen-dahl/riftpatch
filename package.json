@@ -1,6 +1,6 @@
 {
   "name": "riftpatch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a collection of utilities for working with The RiftBreaker mods",
   "main": "dist/main.js",
   "author": "stephen-dahl",
