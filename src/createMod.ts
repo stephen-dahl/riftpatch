@@ -54,7 +54,7 @@ export default async function createMod(
   }
 
   //find game zips
-  const zipFiles = await findZipFiles(gameFolder, true);
+  const zipFiles = await findZipFiles(gameFolder);
   const files = await indexFiles(zipFiles);
 
   //index files to the zip the game will use for them.

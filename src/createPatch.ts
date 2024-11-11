@@ -1,31 +1,20 @@
-import findZipFiles from './lib/findZipFiles';
 import filterForConflicts from './lib/filterForConflicts';
 import readGameFile from './lib/readGameFile';
 import { getDiff } from 'recursive-diff';
 import diffToPatch from './lib/diffToPatch';
 import { writeFile } from 'fs/promises';
 import getModManifest from './lib/getModManifest';
+import findAllZipFiles from './lib/findAllZipFiles';
 
-export default async function createPatch(
-  gamePath: string,
-  modsPath: string,
-  patchFile: string
-) {
-  console.log(`scanning game files at ${gamePath}`);
-  const gameZips = await findZipFiles(gamePath, true);
-  console.log(`scanning mod files at ${modsPath}`);
-  const modZips = await findZipFiles(modsPath);
-  const modInfo: Record<string, Record<string, string>> = {};
+export default async function createPatch(gamePath: string, patchFile: string) {
+  const zips = await findAllZipFiles(gamePath);
 
-  console.log(`looking for mod overrides`);
-  const conflicts = await filterForConflicts(
-    [...gameZips, ...modZips],
-    gamePath,
-    2
-  );
+  console.log(`looking for conflicts`);
+  const conflicts = await filterForConflicts(zips, gamePath, 2);
 
   let i = 1;
-  let files = Object.keys(conflicts).sort();
+  const files = Object.keys(conflicts).sort();
+  const modInfo: Record<string, Record<string, string>> = {};
   const result: string[] = [];
   for (const file of files) {
     console.log(`FILE ${String(i++).padStart(4)}/${files.length} ${file}`);

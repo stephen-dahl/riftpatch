@@ -49,8 +49,10 @@ conflicting files.
 
 `.\riftpatch.exe createMod` reads the patch file to generate the RiftPatch.zip
 
-`.\riftpatch.exe scaleMaps` Bonus function, this creates a standalone mod that scales all maps and resources. By default
-it doubles map sizes, doubles resources in a deposit, and scales the number of resource deposits to match the map size.
+`.\riftpatch.exe mapEdit` can edit the game maps in several ways. takes mods into account. use after createMod.
+* adjust map size
+* adjust resource deposit density
+* adjust resource deposit size
 
-run `.\riftpatch.exe --help` for available options on any of these commands.
+run `.\riftpatch.exe --help` for all available options on any of these commands.
 
