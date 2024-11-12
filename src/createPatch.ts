@@ -17,11 +17,10 @@ export default async function createPatch(gamePath: string, patchFile: string) {
   const modInfo: Record<string, Record<string, string>> = {};
   const result: string[] = [];
   for (const file of files) {
-    console.log(`FILE ${String(i++).padStart(4)}/${files.length} ${file}`);
-    result.push(`\n\nfile ${file}`);
     const zips = conflicts[file];
     if (!zips[0].startsWith(gamePath)) continue;
-
+    console.log(`FILE ${String(i++).padStart(4)}/${files.length} ${file}`);
+    result.push(`\n\nfile ${file}`);
     let gameZip: string;
     do {
       gameZip = zips.shift()!;

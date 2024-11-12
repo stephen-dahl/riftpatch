@@ -67,6 +67,7 @@ export default async function createMod(
   for (const file in diffByFile) {
     const data = await readGameFile(index[file], file);
     const patched = applyDiff(data, diffByFile[file]);
+    console.log('Patched', file, diffByFile[file]);
     const text = toGame(patched);
     zip.addFile(file, Buffer.from(text));
   }
